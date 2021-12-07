@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_login_foreground"
+    android:foreground="@drawable/ic_login_background"
+    android:paddingStart="15dp"
+    android:paddingTop="30dp"
+    tools:context=".ui.home.Home">
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@color/transparent"
+        android:foreground="@drawable/ic_menu" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-light"
+        android:text="Get Cloud"
+        android:textColor="#FFFFFF"
+        android:textSize="22dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/userimg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/ic_person" />
+
+
+    <RelativeLayout
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_below="@id/userimg"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/view1_style"
+        android:gravity="center_vertical"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp">
+
+        <TextView
+            android:id="@+id/storage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Storage"
+            android:textColor="@color/upper"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/size_used"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/storage"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="sans-serif-light"
+            android:text="0 B used / 5GB"
+            android:textColor="@color/upper"
+            android:textStyle="bold" />
+
+
+        <ProgressBar
+            android:id="@+id/storage_capacity"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="11dp"
+            android:progressDrawable="@drawable/progress_style"
+            android:layout_below="@id/size_used"
+            android:layout_marginTop="10dp"
+            android:progressTint="@color/upper" />
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view1"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/recycler_style"
+        android:padding="15dp" />
+
+    <TextView
+        android:id="@+id/item_annotation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="No Data to load"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <android.widget.Button
+        android:id="@+id/add"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_style"
+        android:foreground="@drawable/ic_baseline_add_24"
+        android:foregroundGravity="center"
+        android:onClick="toUpload" />
+
+</RelativeLayout>
